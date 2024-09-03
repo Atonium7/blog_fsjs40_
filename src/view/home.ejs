@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/index.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+            <nav>
+                <a href="/">home</a>
+				<a href="/contact">contact</a>
+				<a href="/about">about-me</a>
+				<a href="/authentication">sign-in</a>
+				<a href="/admin">ADMIN</a>
+			</nav>
+		</header>
+		<main>
+			<section>
+
+                <h1>Bien sur mon blog</h1>
+
+                <div class="banner">
+
+                </div>
+                
+				<h2>Latest Article</h2>
+                <% for (const data of datas) {%>
+                    <article>
+                        <h3><%= data.title %></h3>
+                        <a href="/story/<%= data.id %>">Read More</a>
+                    </article>
+
+                <% } %>
+			</section>
+		</main>
+		<footer>
+			<p>&copy; 2024 - Romain Fournier </p>
+			<p>
+				Photo de Mikhail Nilov:
+				https://www.pexels.com/fr-fr/photo/mer-route-nature-ciel-6943666/
+			</p>
+		</footer>
+	</body>
+</html>

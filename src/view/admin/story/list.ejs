@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/index.css" />
+		<title>Back Office</title>
+	</head>
+	<body>
+		<header>
+			<h1>Back Office</h1>
+			<nav>
+				<a href="/admin">Retourner à l'accueil</a>
+				<a href="/admin/category">Gérer les catégories</a>
+			</nav>
+		</header>
+		<main>
+			<h2>Stories List</h2>
+			<a href="/admin/story/create">Create a new story</a>
+
+			<table>
+				<tr>
+					<th>Id</th>
+					<th>Title</th>
+					<th>Content</th>
+					<th>Actions</th>
+				</tr>
+				<% for (const story of stories) {%>
+				<tr>
+					<td><%= story.id %></td>
+					<td><%= story.title %></td>
+					<td><%= story.content.substring(0, 30) %>...</td>
+					<td>
+						<a href="/admin/story/<%= story.id %>">Edit</a>
+						<a href="/admin/story/delete/<%= story.id %>">Delete</a>
+					</td>
+				</tr>
+				<% } %>
+			</table>
+		</main>
+		<footer>
+			<p>&copy; 2024 - Romain Fournier</p>
+		</footer>
+	</body>
+</html>
